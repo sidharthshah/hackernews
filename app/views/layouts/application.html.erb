@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HackerNews</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <center>
+        <p id="notice"><%= notice %></p>
+        <p id="alert"><%= alert %></p>
+    </center>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">Hacker News</a>
+        <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">New</a></li>
+              <li><a href="#about">Comment</a></li>
+              <li><a href="#contact">Ask</a></li>
+              <li><a href="#contact">Job</a></li>
+              <li><a href="#contact">Submit</a></li>
+          </ul>
+          <p class="navbar-text pull-right">
+              <% if user_signed_in? %>
+               Hello <%= current_user.email %> |
+               <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              <% else %>
+               <%= link_to('Login', new_user_session_path)  %>
+              <% end %>
+          </p>
+      </div><!--/.nav-collapse -->
+  </div>
+</div>
+</div>
+
+<div class="container">
+
+  <%= yield %>
+
+</div>
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/bootstrap-transition.js"></script>
+<script src="/assets/js/bootstrap-alert.js"></script>
+<script src="/assets/js/bootstrap-modal.js"></script>
+<script src="/assets/js/bootstrap-dropdown.js"></script>
+<script src="/assets/js/bootstrap-scrollspy.js"></script>
+<script src="/assets/js/bootstrap-tab.js"></script>
+<script src="/assets/js/bootstrap-tooltip.js"></script>
+<script src="/assets/js/bootstrap-popover.js"></script>
+<script src="/assets/js/bootstrap-button.js"></script>
+<script src="/assets/js/bootstrap-collapse.js"></script>
+<script src="/assets/js/bootstrap-carousel.js"></script>
+<script src="/assets/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>
