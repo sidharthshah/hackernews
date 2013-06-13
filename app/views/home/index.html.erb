@@ -1,3 +1,26 @@
-<% @posts.each do |post| %>
-    <i class="icon-thumbs-up"></i> <%= post.votes_for %> | <i class="icon-thumbs-down"></i> <%= post.votes_against %> | <a href="<%= post.link %>" target=_blank><%= post.title %></a>
-<% end %>
+<table class="table table-striped">
+	<% @posts.each do |post| %>
+	<tr>
+		<td colspan="2">
+			<a href="<%= post.link %>" target=_blank ><%= post.title %></a><small>
+				(<%=	URI.parse(post.link).host	%>)
+			</small>
+		</td>
+	</tr>
+	<tr>
+		<td width="75%">
+			<i class="icon-thumbs-up"></i> <%= post.votes_for %> | <i class="icon-thumbs-down"></i> <%= post.votes_against %> 
+		</td>
+		<td width="25%">
+			<small>
+			<% if post.created_at > Time.now.beginning_of_day %>
+				<%="#{time_ago_in_words(post.created_at)} ago"%> 
+			<% else %>
+				<%= post.created_at.strftime("%b %d, %Y") %> 
+			<% end %>
+			</small>
+		</td>
+	</tr>
+	<% end %>
+</table>
+
