@@ -12,7 +12,7 @@
 			<i class="icon-thumbs-up"></i> <%= post.votes_for %> | <i class="icon-thumbs-down"></i> <%= post.votes_against %> 
 		</td>
 		<td width="25%">
-			<%= post.username %> | points |
+			<a href="/profile/view/<%= post.user_id %>"><%= post.username %></a> | points |
 			<small>
 			<% if post.created_at > Time.now.beginning_of_day %>
 				<%="#{time_ago_in_words(post.created_at)} ago"%> 
