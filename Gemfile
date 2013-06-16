@@ -22,6 +22,7 @@ group :assets do
   gem 'font-awesome-rails'
 end
 
+gem 'yaml_db'
 gem 'jquery-rails'
 gem 'devise'
 gem 'thumbs_up'
