@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.paginate(:page => params[:page])
   end
 end

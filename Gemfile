@@ -22,6 +22,7 @@ group :assets do
   gem 'font-awesome-rails'
 end
 
+gem 'will_paginate', '~> 3.0.0'
 gem 'yaml_db'
 gem 'jquery-rails'
 gem 'devise'
