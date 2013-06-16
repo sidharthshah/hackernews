@@ -8,9 +8,12 @@ gem 'rails', '3.2.12'
 gem 'pg'
 gem 'sqlite3'
 
+group :development, :test do
+  gem 'sqlite3'
+end
+
 group :production do
-        gem 'thin'
-    gem 'pg'
+  gem 'pg'
 end
 
 # Gems used only for assets and not required
