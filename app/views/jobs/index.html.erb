@@ -1,0 +1,25 @@
+<table class="table table-striped">
+	<% @jobs.each do |job| %>
+	<tr>
+		<td colspan="2">
+			<a href="<%= job.link %>" target=_blank ><%= job.title %></a><small>
+				(<%=	URI.parse(job.link).host	%>)
+			</small>
+		</td>
+	</tr>
+	<tr>
+		<td width="25%">
+		</td>
+		<td width="25%">
+			<small>
+			<% if job.created_at > Time.now.beginning_of_day %>
+				<%="#{time_ago_in_words(job.created_at)} ago"%> 
+			<% else %>
+				<%= job.created_at.strftime("%b %d, %Y") %> 
+			<% end %>
+			</small>
+		</td>
+	</tr>
+	<% end %>
+</table>
+<%= will_paginate @jobs %>
