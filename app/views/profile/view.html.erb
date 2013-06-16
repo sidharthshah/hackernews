@@ -1,2 +1,9 @@
 Handle: <%= @user_profile.username %><br/>
-Posts: 
+Posts (Total: <%= @posts.count %>): <br/><br/>
+<% if !@posts.blank? %>
+  <% for item in @posts %>
+    <a href="<%= item.link %>"><%= item.title %></a><br/>
+  <% end %>
+<% else %>
+  
+<% end %>
