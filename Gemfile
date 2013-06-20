@@ -36,6 +36,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'thumbs_up'
 gem 'rails_admin'
+gem 'kaminari'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -48,5 +49,5 @@ gem 'rails_admin'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
+# To use debugger 
 # gem 'debugger'

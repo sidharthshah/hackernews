@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   has_many :posts
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :authentication_keys => [:login]
 
   attr_accessor :login
   # Setup accessible (or protected) attributes for your model

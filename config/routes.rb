@@ -1,9 +1,14 @@
 Hackernews::Application.routes.draw do
-  get "jobs/index"
-
+  
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
-
+  resources :jobs
+  resources :comments
+  resources :home do
+    member do
+      post :vote_up
+    end
+  end
   get "home/index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

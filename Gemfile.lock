@@ -176,6 +176,7 @@ DEPENDENCIES
   devise
   font-awesome-rails
   jquery-rails
+  kaminari
   less-rails
   pg
   rails (= 3.2.12)

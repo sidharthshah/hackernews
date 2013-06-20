@@ -10,6 +10,7 @@
 	<tr>
 		<td width="25%">
 			<i class="icon-thumbs-up"></i> <%= post.votes_for %> | <i class="icon-thumbs-down"></i> <%= post.votes_against %> 
+			<%= link_to('vote for this post!', vote_up_home_path(post), :method => :post) %>
 		</td>
 		<td width="25%">
 			<a href="/profile/view/<%= post.user_id %>"><%= post.username %></a> | points |
